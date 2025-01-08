@@ -1,0 +1,13 @@
+gem "kaminari"
+
+gem "bugsnag"
+
+gem "audited"
+
+gem "devise"
+
+gem "devise-jwt"
+
+gem "dotenv-rails"
+
+gem "motor-admin"
