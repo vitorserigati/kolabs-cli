@@ -16,7 +16,7 @@ module Kolabs
         Dir.chdir(dirname) do
           gemfile = File.readlines("Gemfile")
           gemfile.each do |line|
-            if gem_to_uncomment.any? { |g| line.include? g }
+            if gem_to_uncomment.any? { |g| line.include? "# gem \"#{g}\"" }
               tempfile.puts line.gsub(/^\s*#\s*/, "")
             else
               tempfile.puts line
