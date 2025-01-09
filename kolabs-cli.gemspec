@@ -35,6 +35,7 @@ Gem::Specification.new do |spec|
 
   # Uncomment to register a new dependency of your gem
   spec.add_dependency "fileutils", "~> 1.7.3"
+  spec.add_dependency "open3"
   spec.add_dependency "rails", ">= 7.0", "<= 8.0"
   spec.add_dependency "tempfile"
   spec.add_dependency "thor", "~> 1.3"

@@ -10,8 +10,9 @@ module Kolabs
 
       argument :dirname, type: :string
       def create_cors
-        puts "Updating cors"
+        say "Updating cors", :yellow
         template("cors.txt", "#{dirname}/config/initializers/cors.rb", { force: true })
+        say "Cors file updated: #{dirname}/config/initializers/cors.rb", :green
       end
 
       def self.source_root

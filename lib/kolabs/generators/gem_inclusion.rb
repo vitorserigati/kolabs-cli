@@ -12,9 +12,11 @@ module Kolabs
         template_path = "#{File.dirname(__FILE__)}/gem_inclusion/gem_inclusion.txt"
         template = File.read(template_path)
         gem_to_uncomment = %w[jbuilder rack-cors bcrypt]
+        puts "Adding gems: #{gem_to_uncomment}"
 
         Dir.chdir(dirname) do
           gemfile = File.readlines("Gemfile")
+          tempfile.puts "# frozen_string_literal: true\n"
           gemfile.each do |line|
             if gem_to_uncomment.any? { |g| line.include? "# gem \"#{g}\"" }
               tempfile.puts line.gsub(/^\s*#\s*/, "")
@@ -26,6 +28,8 @@ module Kolabs
           tempfile.close
           FileUtils.mv tempfile.path, "Gemfile"
         end
+
+        puts "Gemfile updated: #{dirname}/Gemfile"
       end
     end
   end

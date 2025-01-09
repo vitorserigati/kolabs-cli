@@ -11,9 +11,9 @@ module Kolabs
       argument :dirname, type: :string
 
       def create_dotenv
-        puts "Creating Dotenv example"
+        say "Creating Dotenv example", :yellow
         template("dotenv.txt", "#{dirname}/.env")
-        puts "Dotenv created successfully"
+        say "Dotenv created successfully", :green
       end
 
       def self.source_root

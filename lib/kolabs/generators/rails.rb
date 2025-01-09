@@ -11,9 +11,9 @@ module Kolabs
       argument :name, type: :string
 
       def create_project
-        puts "Creating rails project"
+        say "Creating rails project", :yellow
         system("rails new #{name} --api -d postgresql -T -B")
-        puts "Project created succcessfully"
+        say "Project created succcessfully", :green
       end
     end
   end
